@@ -6,11 +6,9 @@ SYNOPSIS
 
         my $delta = Vcdiff::Xdelta3::diff($source, $target);
 
-        ## ... send the $delta string to someone who has $source ...
-
         my $target2 = Vcdiff::Xdelta3::patch($source, $delta);
 
-        ## $target2 is the same as $target
+        ## $target2 eq $target
 
     This module is a backend to the Vcdiff module and isn't usually used
     directly.
@@ -24,8 +22,16 @@ PROS
     *   Doesn't have arbitrary size limitations on source, target, or delta
         files.
 
+    *   Has a really neat feature that lets you merge VCDIFF deltas into a
+        single delta. Unfortunately this module doesn't expose that yet.
+
 CONS
     *   GPL licensed
+
+    *   Build system is really weird. I didn't bother figuring out how to
+        run Xdelta3's test-suite when installing the CPAN module which is
+        unfortunate. Note that installing this module does still run the
+        shared test-suite in Vcdiff.
 
 SEE ALSO
     <Vcdiff-Xdelta3 github repo>

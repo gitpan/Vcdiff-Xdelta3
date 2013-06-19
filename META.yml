@@ -19,8 +19,8 @@ no_index:
     - inc
 requires:
   Carp: 0
-  Vcdiff: 0
+  Vcdiff: 0.500
 resources:
   bugtracker: https://github.com/hoytech/Vcdiff-Xdelta3/issues
   repository: git://github.com/hoytech/Vcdiff-Xdelta3.git
-version: 0.100
+version: 0.103

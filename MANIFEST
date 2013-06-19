@@ -20,7 +20,6 @@ lib/Vcdiff/Xdelta3.pm
 Makefile.PL
 MANIFEST
 MANIFEST.SKIP
-t/in_mem.t
 t/non_lseekable.t
 t/streaming.t
 META.yml                                 Module YAML meta-data (added by MakeMaker)

@@ -6,7 +6,7 @@ use Carp;
 
 use Vcdiff;
 
-our $VERSION = '0.100';
+our $VERSION = '0.103';
 
 require XSLoader;
 XSLoader::load('Vcdiff::Xdelta3', $VERSION);
@@ -133,11 +133,9 @@ Vcdiff::Xdelta3 - Xdelta3 backend for Vcdiff
 
     my $delta = Vcdiff::Xdelta3::diff($source, $target);
 
-    ## ... send the $delta string to someone who has $source ...
-
     my $target2 = Vcdiff::Xdelta3::patch($source, $delta);
 
-    ## $target2 is the same as $target
+    ## $target2 eq $target
 
 This module is a backend to the L<Vcdiff> module and isn't usually used directly.
 
@@ -155,6 +153,10 @@ Xdelta3 is a delta encoding library by Joshua MacDonald. The Xdelta3 source code
 
 Doesn't have arbitrary size limitations on source, target, or delta files.
 
+=item *
+
+Has a really neat feature that lets you merge VCDIFF deltas into a single delta. Unfortunately this module doesn't expose that yet.
+
 =back
 
 
@@ -165,6 +167,10 @@ Doesn't have arbitrary size limitations on source, target, or delta files.
 =item *
 
 GPL licensed
+
+=item *
+
+Build system is really weird. I didn't bother figuring out how to run Xdelta3's test-suite when installing the CPAN module which is unfortunate. Note that installing this module does still run the shared test-suite in L<Vcdiff>.
 
 =back
 
